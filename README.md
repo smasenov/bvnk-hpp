@@ -10,8 +10,17 @@ Follow the steps below to properly set up and test the **bvnk-hpp** project.
 
 Open your terminal and run:
 
+### SSH
+
 ```bash
-git clone <repository-url>
+git clone git@github.com:smasenov/bvnk-hpp.git
+cd bvnk-hpp
+```
+
+### HTTPS
+
+```bash
+git clone https://github.com/smasenov/bvnk-hpp.git
 cd bvnk-hpp
 ```
 
@@ -49,12 +58,12 @@ http://localhost:3000/
 
 ### 6. Test the Payment Flow
 
-* Paste a **valid payment ID** into the input field.
-* Press the button to trigger the payment processing.
+- Paste a **valid payment ID** into the input field.
+- Press the button to trigger the payment processing.
 
 ---
-If you need additional setup steps, environment variable explanations, or API documentation added to this README, let me know!
 
+If you need additional setup steps, environment variable explanations, or API documentation added to this README, let me know!
 
 ## Available Scripts
 
