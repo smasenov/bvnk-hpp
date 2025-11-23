@@ -21,12 +21,12 @@
   display: flex;
   min-height: 100vh;
   width: 100%;
-  max-width: 800px;
+  max-width: 50rem;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   background-color: var(--foreground);
-  padding: 120px 60px;
+  padding: 7.5rem 3.75rem;
 }
 
 .intro {
@@ -34,23 +34,23 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  gap: 24px;
+  gap: 1.5rem;
 }
 
 .intro h1 {
-  max-width: 320px;
-  font-size: 40px;
+  max-width: 20rem;
+  font-size: 2.5rem;
   font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
+  line-height: 3rem;
+  letter-spacing: -0.15rem;
   text-wrap: balance;
   color: var(--text-primary);
 }
 
 .intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
+  max-width: 27.5rem;
+  font-size: 1.125rem;
+  line-height: 2rem;
   text-wrap: balance;
   color: var(--text-secondary);
 }
@@ -64,18 +64,18 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+  max-width: 27.5rem;
+  gap: 1rem;
+  font-size: 0.875rem;
 }
 
 .ctas a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
+  height: 2.5rem;
+  padding: 0 1rem;
+  border-radius: 8rem;
   border: 1px solid transparent;
   transition: 0.2s;
   cursor: pointer;
@@ -86,11 +86,75 @@
 a.primary {
   background: var(--text-primary);
   color: var(--background);
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 a.secondary {
   border-color: var(--button-secondary-border);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 27.5rem;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--button-secondary-border);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: var(--font-geist-sans);
+  background-color: var(--foreground);
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--text-primary);
+}
+
+.input::placeholder {
+  color: var(--text-secondary);
+}
+
+.button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background: var(--text-primary);
+  color: var(--background);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: var(--font-geist-sans);
+}
+
+.button:hover {
+  background: var(--button-primary-hover);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 /* Enable hover only on non-touch devices */
@@ -106,19 +170,19 @@ a.secondary {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 37.5rem) {
   .main {
-    padding: 48px 24px;
+    padding: 3rem 1.5rem;
   }
 
   .intro {
-    gap: 16px;
+    gap: 1rem;
   }
 
   .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.12rem;
   }
 }
 

@@ -1,40 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# BVNK Hosted Payment Page (HPP)
 
-## Getting Started
+## How to Test the Project
 
-First, run the development server:
+Follow the steps below to properly set up and test the **bvnk-hpp** project.
+
+---
+
+### 1. Clone the Repository
+
+Open your terminal and run:
+
+```bash
+git clone <repository-url>
+cd bvnk-hpp
+```
+
+### 2. Configure Environment Variables
+
+In the root of the project, locate the `.env` file. Add a valid merchant ID:
+
+```
+MERCHANT_ID=your_valid_merchant_id
+```
+
+### 3. Install Dependencies
+
+Install all required packages:
+
+```bash
+npm install
+```
+
+### 4. Start the Development Server
+
+Run the project locally:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 5. Open the Application
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Visit the following URL in your browser:
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```
+http://localhost:3000/
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### 6. Test the Payment Flow
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* Paste a **valid payment ID** into the input field.
+* Press the button to trigger the payment processing.
 
-## Learn More
+---
+If you need additional setup steps, environment variable explanations, or API documentation added to this README, let me know!
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Available Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Start development server
+npm run dev
 
-## Deploy on Vercel
+# Build for production
+npm run build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Start production server
+npm run start
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+# Run linter
+npm run lint
+
+# Run tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable components
+│   ├── buttons/        # Button components (CopyButton)
+│   ├── LoadingSpinner/ # Loading indicator
+│   ├── PageLayout/     # Page layout wrapper
+│   ├── PaymentCard/    # Payment card wrapper
+│   └── PaymentHeader/  # Payment header component
+├── hooks/              # Custom React hooks
+│   ├── useCountdownTimer.ts
+│   └── usePayment.ts
+├── pages/              # Next.js pages
+│   ├── api/           # API routes
+│   ├── create-payment/# Payment creation page
+│   └── payin/         # Payment flow pages
+│       └── [uuid]/    # Dynamic route for payment UUID
+├── styles/            # Global styles
+├── types/             # TypeScript type definitions
+└── utils/             # Utility functions
+    ├── api.ts         # API client functions
+    ├── clipboard.ts   # Clipboard utilities
+    ├── paymentExpiration.ts
+    └── timer.ts       # Timer formatting utilities
+```
